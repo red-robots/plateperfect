@@ -1,3 +1,10 @@
+.clear-bottom {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
 .copy {
   font-size: 16px;
   color: black;

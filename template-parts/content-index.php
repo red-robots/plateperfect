@@ -10,34 +10,66 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
-	<?php $slider = get_field("slider");
-	if($slider):?>
-		<div class="flexslider row-1">
-			<ul>
-				<?php foreach($slider as $row):?>
-					<?php if($row['image']):?>
-						<li class="slide">
-							<img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>">
-						</li>
-					<?php endif;?>
-				<?php endforeach;?>
-			</ul>
-		</div><!--.flexslider-->
-	<?php endif;?>
+	<?php $slider = get_field("slider");?>
+	<div class="flexslider-wrapper row-1">
+		<div class="overlay row-1 <?php echo $slider? "slider-present":"slider-absent";?>">
+			<div class="row-1">
+				<h1 class="logo">
+					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
+				</h1>
+			</div><!--.row-1-->
+			<div class="row-2">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			</div><!--.row-2-->
+		</div><!--.overlay-->
+		<?php if($slider):?>
+			<div class="flexslider row-2">
+				<ul class="slides">
+					<?php foreach($slider as $row):?>
+						<?php if($row['image']):?>
+							<li class="slide">
+								<img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>">
+							</li>
+						<?php endif;?>
+					<?php endforeach;?>
+				</ul>
+			</div><!--.flexslider-->
+		<?php endif;?>
+	</div><!--.flexslider-wrapper-->
 	<?php $page_picker = get_field("page_picker");
 	if($page_picker):?>
-		<div class="row-2">
+		<div class="row-2 clear-bottom">
 			<?php foreach($page_picker as $row):?>
-				<?php if($row['page']):?>
-					<div class="outer-wrapper">
-						<div class="inner-wrapper">
-							<a href="<?php echo get_the_permalink($row['page']->ID);?>">
-								<?php echo $row['page']->post_title;?>
+				<?php if($row['page']):
+					$post = get_post($row['page']);
+					setup_postdata( $post );
+					$image = get_field("link_background_image");
+					if($image):?>
+						<div class="outer-wrapper" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
+							<a href="<?php echo get_the_permalink();?>">
+								<div class="inner-wrapper" >
+									<?php the_title();?>
+								</div><!--.inner-wrapper-->
 							</a>
+						</div><!--.outer-wrapper-->
+					<?php endif;
+					wp_reset_postdata();
+				endif;?>
+			<?php endforeach;
+			$post = get_post(26);
+			setup_postdata( $post );
+			$image = get_field("link_background_image");
+			$text = get_field("subscribe_text");
+			if($image && $text):?>
+				<div class="outer-wrapper" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
+					<a href="<?php echo get_the_permalink();?>">
+						<div class="inner-wrapper" >
+							<?php echo $text;?>	
 						</div><!--.inner-wrapper-->
-					</div><!--.outer-wrapper-->
-				<?php endif;?>
-			<?php endforeach;?>
+					</a>
+				</div><!--.outer-wrapper-->
+			<?php endif;
+			wp_reset_postdata();?>
 		</div><!--.row-2-->
 	<?php endif;?>
 </article><!-- #post-## -->
