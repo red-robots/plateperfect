@@ -9,33 +9,27 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acstarter' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'acstarter' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-page"); ?>>
+	<header>
+		<h1><?php the_title();?></h1>
+	</header>
+	<?php if(get_the_content()):?>
+		<div class="copy">
+			<?php the_content();?>
+		</div><!--.copy-->
+	<?php endif;
+	$slider = get_field("slider");
+	if($slider):?>
+		<div class="flexslider">
+			<ul class="slides">
+				<?php foreach($slider as $row):?>
+					<?php if($row['image']):?>
+						<li class="slide">
+							<img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>">
+						</li>
+					<?php endif;?>
+				<?php endforeach;?>
+			</ul>
+		</div><!--.slider-->
+	<?php endif;?>
 </article><!-- #post-## -->

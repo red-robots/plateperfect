@@ -75,9 +75,9 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
-  margin: 0 0 60px;
+  margin: 0;
   background: #ffffff;
-  border: 4px solid #ffffff;
+  overflow: hidden;
   position: relative;
   zoom: 1;
   -webkit-border-radius: 4px;

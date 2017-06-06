@@ -22,26 +22,23 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="wrapper">
-			
-			<?php if(is_home()) { ?>
-	            <h1 class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </h1>
-	        <?php } else { ?>
-	            <div class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </div>
-	        <?php } ?>
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acstarter' ); ?></button>
+	<?php $image = get_field("header_image");?>
+	<div class="header-wrapper row-1" style="background-image: url(<?php echo $image['sizes']['large'];?>);">
+		<div class="overlay row-1 <?php echo $image? "image-present":"image-absent";?>">
+			<div class="row-1">
+				<h1 class="logo">
+					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
+				</h1>
+			</div><!--.row-1-->
+			<div class="row-2">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-	</div><!-- wrapper -->
-	</header><!-- #masthead -->
+			</div><!--.row-2-->
+		</div><!--.overlay-->
+		<?php if($image):?>
+			<div class="row-2">
+				<img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+			</div><!--.row-2-->
+		<?php endif;?>
+	</div><!--.header-wrapper-->
 
 	<div id="content" class="site-content wrapper">

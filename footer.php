@@ -48,8 +48,8 @@
 			<?php endif;
 			if($telephone):?>
 				<div class="telephone">
+					<?php if($telephone_prefix) echo $telephone_prefix."&nbsp;";?>
 					<a href="tel:<?php echo preg_replace("/[^0-9]/","",$telephone);?>">
-						<?php if($telephone_prefix) echo $telephone_prefix."&nbsp;";?>
 						<?php echo $telephone;?>
 					</a>
 				</div><!--address-line-1-->

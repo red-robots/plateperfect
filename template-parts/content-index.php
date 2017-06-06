@@ -11,8 +11,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
 	<?php $slider = get_field("slider");?>
-	<div class="flexslider-wrapper row-1">
-		<div class="overlay row-1 <?php echo $slider? "slider-present":"slider-absent";?>">
+	<div class="header-wrapper row-1">
+		<div class="overlay row-1 <?php echo $slider? "image-present":"image-absent";?>">
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
@@ -33,9 +33,9 @@
 						<?php endif;?>
 					<?php endforeach;?>
 				</ul>
-			</div><!--.flexslider-->
+			</div><!--.row-2-->
 		<?php endif;?>
-	</div><!--.flexslider-wrapper-->
+	</div><!--.header-wrapper-->
 	<?php $page_picker = get_field("page_picker");
 	if($page_picker):?>
 		<div class="row-2 clear-bottom">
@@ -45,7 +45,7 @@
 					setup_postdata( $post );
 					$image = get_field("link_background_image");
 					if($image):?>
-						<div class="outer-wrapper" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
+						<div class="outer-wrapper js-blocks" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
 							<a href="<?php echo get_the_permalink();?>">
 								<div class="inner-wrapper" >
 									<?php the_title();?>
@@ -61,7 +61,7 @@
 			$image = get_field("link_background_image");
 			$text = get_field("subscribe_text");
 			if($image && $text):?>
-				<div class="outer-wrapper" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
+				<div class="outer-wrapper js-blocks" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
 					<a href="<?php echo get_the_permalink();?>">
 						<div class="inner-wrapper" >
 							<?php echo $text;?>	
