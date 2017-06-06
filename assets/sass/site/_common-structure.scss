@@ -82,6 +82,9 @@
     position: relative;
     background-size: 100% auto;
     background-position: bottom;
+    @media screen and (max-width: 599px){
+      background-image: none !important;
+    }
     >.overlay.row-1 {
         &.image-present {
             width: 100%;
@@ -120,6 +123,9 @@
                     margin: 0 auto;
                     @media screen and (min-width: $tabwidth){
                         width: 20%;
+                    }
+                    &.hidden {
+                      display: none;
                     }
                     img {
                         width: 100%;

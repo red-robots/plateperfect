@@ -75,9 +75,13 @@ jQuery(document).ready(function ($) {
 			var $page = $('#page');
 			var $wrapper = $page.find('>.header-wrapper');
 			var $overlay = $wrapper.find('.overlay');
+			var $overlay_row_1 = $overlay.find(">.row-1");
+			var $overlay_row_2 = $overlay.find(">.row-2");
+			var $logo = $overlay_row_1.find('.logo');
+			var $logo_as = $logo.find('a');
+			var $hidden_logo = $logo.find('a.hidden');
 			var $row_2 = $wrapper.find('>.row-2');
 			var page_padding = Number($page.css("paddingTop").replace(/[^0-9]/g,""));
-			console.log($page.offset().top + page_padding);
 			if(window.innerWidth>599 
 			&& $window.scrollTop() + $overlay.outerHeight() >= $wrapper.offset().top + $wrapper.outerHeight()
 			&& $window.scrollTop() + $overlay.outerHeight() >= $page.offset().top + page_padding){
@@ -97,6 +101,15 @@ jQuery(document).ready(function ($) {
 					$overlay.css({
 						position: "static"
 					});
+					$logo_as.css("display","none");
+					$hidden_logo.css("display","block");
+					$overlay_row_1.css({
+						float: "left",
+					});
+					$overlay_row_2.css({
+						float: "left",
+						marginTop: 0
+					});
 				}
 			} else {
 				if(!$wrapper.hasClass("inactive-bar")){
@@ -113,6 +126,15 @@ jQuery(document).ready(function ($) {
 					});
 					$overlay.css({
 						position: ""
+					});
+					$logo_as.css("display","");
+					$hidden_logo.css("display","");
+					$overlay_row_1.css({
+						float: "",
+					});
+					$overlay_row_2.css({
+						float: "",
+						marginTop: ""
 					});
 				}
 			}

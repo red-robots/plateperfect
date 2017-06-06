@@ -24,10 +24,11 @@
 <div id="page" class="site">
 	<?php $image = get_field("header_image");?>
 	<div class="header-wrapper row-1" style="background-image: url(<?php echo $image['sizes']['large'];?>);">
-		<div class="overlay row-1 <?php echo $image? "image-present":"image-absent";?>">
+		<div class="overlay clear-bottom row-1 <?php echo $image? "image-present":"image-absent";?>">
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
+					<a class="hidden" href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
 				</h1>
 			</div><!--.row-1-->
 			<div class="row-2">
