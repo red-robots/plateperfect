@@ -19,7 +19,7 @@ get_header("simple"); ?>
 
 		<?php
 			/* Start the Loop */
-			$post = get_post(7);
+			$post = get_post(30);
 			if ( $post ) : setup_postdata( $post );
 
 				/*
