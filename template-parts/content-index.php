@@ -58,7 +58,7 @@
 					wp_reset_postdata();
 				endif;?>
 			<?php endforeach;
-			$post = get_post(26);
+			$post = get_post(32);
 			setup_postdata( $post );
 			$image = get_field("link_background_image");
 			$text = get_field("subscribe_text");

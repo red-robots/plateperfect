@@ -145,12 +145,12 @@
                 display: none;
               }
             }
-            #primary-menu {
+            .menu-primary-container {
               display: none;
               @media screen and (min-width: $tabwidth){
                 display: block;
               }
-              ul {
+              ul#primary-menu {
                   margin: 0;
                   padding: 0;
                   text-align: center;
