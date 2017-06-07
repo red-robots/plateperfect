@@ -85,13 +85,18 @@ jQuery(document).ready(function ($) {
 			$page.css("paddingTop",'');
 			if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
 				$logo_as.css("display","none");
-				$hidden_logo.css("display","block");
+				$hidden_logo.css({
+					display:"block",
+					width: "80%",
+				});
 				$overlay_row_1.css({
 					float: "left",
+					width: "10%",
 				});
 				$overlay_row_2.css({
 					float: "left",
-					marginTop: 0
+					marginTop: 20,
+					width: "90%",
 				});
 				if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
 					$overlay.css({
@@ -105,13 +110,18 @@ jQuery(document).ready(function ($) {
 				}
 			} else {
 				$logo_as.css("display","");
-				$hidden_logo.css("display","");
+				$hidden_logo.css({
+					display:"",
+					width: "",
+				});
 				$overlay_row_1.css({
 					float: "",
+					width: "",
 				});
 				$overlay_row_2.css({
 					float: "",
-					marginTop: ""
+					marginTop: "",
+					width: "",
 				});
 				$overlay.css({
 					top: "",
@@ -119,13 +129,18 @@ jQuery(document).ready(function ($) {
 				$overlay.addClass("no-background");
 				if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
 					$logo_as.css("display","none");
-					$hidden_logo.css("display","block");
+					$hidden_logo.css({
+						display:"block",
+						width: "80%",
+					});
 					$overlay_row_1.css({
 						float: "left",
+					width: "10%",
 					});
 					$overlay_row_2.css({
 						float: "left",
-						marginTop: 0
+						marginTop: 20,
+						width: "90%",
 					});
 					if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
 						$overlay.css({
@@ -149,4 +164,13 @@ jQuery(document).ready(function ($) {
 	}
 	$(window).scroll(check_header);
 	$(window).resize(check_header);
+
+	$('.header-wrapper >.overlay >.row-2 .bars').click(function(){
+		var $menu = $('.header-wrapper >.overlay >.row-2 .menu-primary-container'); 
+		if($menu.hasClass("active")){
+			$menu.removeClass("active");
+		} else {
+			$menu.addClass("active");
+		}
+	});
 });// END #####################################    END

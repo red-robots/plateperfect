@@ -760,29 +760,27 @@ html[xmlns] .flexslider .slides{display:block}
 .row-1.header-wrapper>.overlay.row-1.image-absent{width:100%;padding:20px}
 @media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1.image-absent>.row-2 ul li a{color:black}
 .row-1.header-wrapper>.overlay.row-1.image-absent>.row-2 ul li a:hover{color:black}
-}.row-1.header-wrapper>.overlay.row-1>.row-1{float:left}
-@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-1{float:none}
+}.row-1.header-wrapper>.overlay.row-1>.row-1{float:left;width:10%}
+@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-1{float:none;width:100%}
 }.row-1.header-wrapper>.overlay.row-1>.row-1 .logo{margin:0}
 .row-1.header-wrapper>.overlay.row-1>.row-1 .logo a{display:none;width:80%;margin:0 auto}
 @media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-1 .logo a{width:20%;display:block}
 }.row-1.header-wrapper>.overlay.row-1>.row-1 .logo a.hidden{display:block}
 @media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-1 .logo a.hidden{display:none}
 }.row-1.header-wrapper>.overlay.row-1>.row-1 .logo a img{width:100%;display:block}
-.row-1.header-wrapper>.overlay.row-1>.row-2{float:right;margin-top:20px}
-@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2{float:none}
-}.row-1.header-wrapper>.overlay.row-1>.row-2 .bars{display:block}
+.row-1.header-wrapper>.overlay.row-1>.row-2{float:right;width:90%}
+@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2{float:none;width:100%;margin-top:20px}
+}.row-1.header-wrapper>.overlay.row-1>.row-2 .bars{display:block;float:right;margin-top:8px;color:white}
 @media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .bars{display:none}
 }.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container{display:none}
+.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container.active{display:block}
 @media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container{display:block}
 }.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu{margin:0;padding:0;text-align:center}
-.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li{list-style-type:none;padding:20px 0 0 0;margin:0}
-.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li:first-child{padding:0}
-@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li{display:inline-block;padding:0 20px}
-.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li:first-child{padding:0 20px}
-}.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a{font-size:18px;text-transform:uppercase;font-weight:700;text-decoration:none;color:black}
-.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a:hover{color:black}
-@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a{color:white}
+.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li{list-style-type:none;padding:0 10px;display:inline-block;margin:0}
+@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li{padding:0 20px}
+}.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a{font-size:14px;text-transform:uppercase;font-weight:700;text-decoration:none;color:white}
 .row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a:hover{color:white}
+@media screen and (min-width:600px){.row-1.header-wrapper>.overlay.row-1>.row-2 .menu-primary-container ul#primary-menu li a{font-size:18px}
 }.row-1.header-wrapper>.row-2{display:none}
 @media screen and (min-width:600px){.row-1.header-wrapper>.row-2{display:block}
 }.row-1.header-wrapper>.row-2>img{width:100%;display:block}
