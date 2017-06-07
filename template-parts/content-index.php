@@ -12,13 +12,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
 	<?php $slider = get_field("slider");?>
 	<div class="header-wrapper row-1">
-		<div class="overlay row-1 <?php echo $slider? "image-present":"image-absent";?>">
+		<div class="overlay clear-bottom row-1 <?php echo $slider? "image-present":"image-absent";?>" <?php if($slider && $slider[0]['image']):?>style="background-image: url(<?php echo $slider[0]['image']['sizes']['large'];?>);"<?php endif;?>>
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="<?php bloginfo('name');?>"></a>
+					<a class="hidden" href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg" alt="<?php bloginfo('name');?>"></a>
 				</h1>
 			</div><!--.row-1-->
 			<div class="row-2">
+				<div class="bars"><i class="fa fa-bars"></i></div><!--.bars-->
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div><!--.row-2-->
 		</div><!--.overlay-->

@@ -26,6 +26,7 @@ jQuery(document).ready(function ($) {
 	$('.flexslider').imagesLoaded( function() {
 		$('.flexslider').flexslider({
 			animation: "slide",
+			start: check_header
 		}); // end register flexslider
 	});
 	/*
@@ -69,39 +70,54 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	new WOW().init();
 
-	if($('body.home').length===0){
-		var flip_holder = null;
-		function check_header(){
-			var $window = $(window);
-			var $page = $('#page');
-			var $wrapper = $page.find('>.header-wrapper');
-			var $overlay = $wrapper.find('.overlay');
-			var $overlay_row_1 = $overlay.find(">.row-1");
-			var $overlay_row_2 = $overlay.find(">.row-2");
-			var $logo = $overlay_row_1.find('.logo');
-			var $logo_as = $logo.find('a');
-			var $hidden_logo = $logo.find('a.hidden');
-			var $row_2 = $wrapper.find('>.row-2');
-			var page_padding = Number($page.css("paddingTop").replace(/[^0-9]/g,""));
-			if(window.innerWidth>599 
-			&& $window.scrollTop() + $overlay.outerHeight() >= $wrapper.offset().top + $wrapper.outerHeight()
-			&& (flip_holder === null || $window.scrollTop() + $overlay.outerHeight() >= flip_holder)){
-				if(!$wrapper.hasClass("active-bar")){
-					$page.css("paddingTop",$wrapper.height()+"px");
-					$wrapper.addClass("active-bar");
-					$wrapper.removeClass("inactive-bar");
-					$wrapper.css({
-						position: "fixed",
-						top: 0,
-						left: 0,
-						zIndex: 99,
-					});
-					$row_2.css({
-						display: "none"
-					});
+	function check_header(){
+		var $window = $(window);
+		var $page = $('#page');
+		var $wrapper = $page.find('.header-wrapper');
+		var $overlay = $wrapper.find('.overlay');
+		var $overlay_row_1 = $overlay.find(">.row-1");
+		var $overlay_row_2 = $overlay.find(">.row-2");
+		var $logo = $overlay_row_1.find('.logo');
+		var $logo_as = $logo.find('a');
+		var $hidden_logo = $logo.find('a.hidden');
+		var $row_2 = $wrapper.find('>.row-2');
+		if(window.innerWidth>599 ){
+			$page.css("paddingTop",'');
+			if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
+				$logo_as.css("display","none");
+				$hidden_logo.css("display","block");
+				$overlay_row_1.css({
+					float: "left",
+				});
+				$overlay_row_2.css({
+					float: "left",
+					marginTop: 0
+				});
+				if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
 					$overlay.css({
-						position: "static"
+						top: 0,
 					});
+					$overlay.removeClass("no-background");
+				} else {
+					$overlay.css({
+						top: $row_2.offset().top+$row_2.outerHeight()-$overlay.outerHeight() -$window.scrollTop(),
+					});
+				}
+			} else {
+				$logo_as.css("display","");
+				$hidden_logo.css("display","");
+				$overlay_row_1.css({
+					float: "",
+				});
+				$overlay_row_2.css({
+					float: "",
+					marginTop: ""
+				});
+				$overlay.css({
+					top: "",
+				});
+				$overlay.addClass("no-background");
+				if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
 					$logo_as.css("display","none");
 					$hidden_logo.css("display","block");
 					$overlay_row_1.css({
@@ -111,39 +127,26 @@ jQuery(document).ready(function ($) {
 						float: "left",
 						marginTop: 0
 					});
-					flip_holder = $window.scrollTop()+$overlay.outerHeight();
-				}
-			} else {
-				if(!$wrapper.hasClass("inactive-bar")){
-					$wrapper.removeClass("active-bar");
-					$wrapper.addClass("inactive-bar");
-					$page.css("paddingTop",0);
-					$wrapper.css({
-						position: "",
-						top: "",
-						left: "",
-					});
-					$row_2.css({
-						display: ""
-					});
-					$overlay.css({
-						position: ""
-					});
-					$logo_as.css("display","");
-					$hidden_logo.css("display","");
-					$overlay_row_1.css({
-						float: "",
-					});
-					$overlay_row_2.css({
-						float: "",
-						marginTop: ""
-					});
-					flip_holder = null;
+					if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
+						$overlay.css({
+							top: 0,
+						});
+						$overlay.removeClass("no-background");
+					} else {
+						$overlay.css({
+							top: $row_2.offset().top+$row_2.outerHeight()-$overlay.outerHeight() -$window.scrollTop(),
+						});
+					}
 				}
 			}
+		} else {
+			$overlay.removeClass("no-background");
+			$page.css("paddingTop",$overlay.outerHeight());
 		}
-		check_header();
-		$(window).scroll(check_header);
-		$(window).resize(check_header);
 	}
+	if($('body.home').length===0){
+		check_header();
+	}
+	$(window).scroll(check_header);
+	$(window).resize(check_header);
 });// END #####################################    END
