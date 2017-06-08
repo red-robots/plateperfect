@@ -809,7 +809,13 @@ html[xmlns] .flexslider .slides{display:block}
 @media screen and (min-width:600px){.template-page>header h1{margin:0 0 3% 0}
 }.template-page .copy{margin:0 0 40px 0}
 @media screen and (min-width:600px){.template-page .copy{margin:0 0 10% 0}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.template-page .flexslider{display:none}
+@media screen and (min-width:600px){.template-page .flexslider{display:block}
+}@media screen and (min-width:600px){.template-page .mobile-images{display:none}
+}.template-page .mobile-images .row-1 img{display:block;width:100%}
+.template-page .mobile-images .row-2 a{float:right;font-size:20px;text-decoration:none;color:black}
+.template-page .mobile-images .row-2 a:hover{color:black}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

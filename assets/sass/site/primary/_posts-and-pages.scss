@@ -68,9 +68,35 @@
         }
     }
     .flexslider {
+        display: none;
+        @media screen and (min-width: $tabwidth){
+            display: block;
+        }
         ul {
             li {
 
+            }
+        }
+    }
+    .mobile-images {
+        @media screen and (min-width: $tabwidth){
+            display: none;
+        }
+        .row-1 {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .row-2 {
+            a {
+                float: right;
+                font-size: 20px;
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color: black;
+                }
             }
         }
     }

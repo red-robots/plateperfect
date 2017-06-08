@@ -91,12 +91,12 @@ jQuery(document).ready(function ($) {
 				});
 				$overlay_row_1.css({
 					float: "left",
-					width: "10%",
+					width: "100px",
 				});
 				$overlay_row_2.css({
 					float: "left",
 					marginTop: 20,
-					width: "90%",
+					width: "calc(100% - 100px)",
 				});
 				if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
 					$overlay.css({
@@ -135,12 +135,12 @@ jQuery(document).ready(function ($) {
 					});
 					$overlay_row_1.css({
 						float: "left",
-					width: "10%",
+						width: "100px",
 					});
 					$overlay_row_2.css({
 						float: "left",
 						marginTop: 20,
-						width: "90%",
+						width: "calc(100% - 100px)",
 					});
 					if($window.scrollTop() + $overlay.outerHeight() >= $row_2.offset().top + $row_2.outerHeight()){
 						$overlay.css({

@@ -31,5 +31,21 @@
 				<?php endforeach;?>
 			</ul>
 		</div><!--.slider-->
+	<?php endif;
+	if($slider):?>
+		<div class="mobile-images">
+			<div class="row-1">
+				<?php foreach($slider as $row):?>
+					<?php if($row['image']):?>
+						<img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>">
+					<?php endif;?>
+				<?php endforeach;?>
+			</div><!--.row-1-->
+			<div class="row-2 clear-bottom">
+				<a href="#top">
+					<i class="fa fa-chevron-circle-up"></i>
+				</a>
+			</div><!--.row-2-->
+		</div><!--.mobile-images-->
 	<?php endif;?>
 </article><!-- #post-## -->

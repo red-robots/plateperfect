@@ -21,6 +21,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<a name="top"></a>
 <div id="page" class="site">
 	<?php $image = get_field("header_image");?>
 	<div class="header-wrapper row-1" >
