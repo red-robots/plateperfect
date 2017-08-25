@@ -16,7 +16,7 @@
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name');?>"></a>
-					<a class="hidden" href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg" alt="<?php bloginfo('name');?>"></a>
+					<a class="hidden" href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo2.png" alt="<?php bloginfo('name');?>"></a>
 				</h1>
 			</div><!--.row-1-->
 			<div class="row-2">
