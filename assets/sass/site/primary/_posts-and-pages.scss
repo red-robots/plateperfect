@@ -48,7 +48,7 @@
         }
     }
 }
-.template-page {
+.template-page, .error-404, .template-sitemap {
     padding: 20px;
     @media screen and (min-width: $tabwidth){
         padding: 5% 12% 50% 12%;
