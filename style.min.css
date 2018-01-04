@@ -707,9 +707,7 @@ html[xmlns] .flexslider .slides{display:block}
 .loading .flex-viewport{max-height:300px}
 .carousel li{margin-right:5px}
 .flex-direction-nav{*height:0}
-.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:40px;margin:-20px 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;opacity:0;cursor:pointer;color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
-.flex-direction-nav a:before{font-family:"flexslider-icon";font-size:40px;display:inline-block;content:'\f001';color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3)}
-.flex-direction-nav a.flex-next:before{content:'\f002'}
+.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:40px;margin:-20px 0 0;position:absolute;top:50%;font-size:40px;color:rgba(255,255,255,0.5);line-height:1;z-index:10;overflow:hidden;opacity:0;cursor:pointer;text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .flex-direction-nav .flex-prev{left:-50px}
 .flex-direction-nav .flex-next{right:-50px;text-align:right}
 .flexslider:hover .flex-direction-nav .flex-prev{opacity:.7;left:10px}

@@ -26,7 +26,9 @@ jQuery(document).ready(function ($) {
 	$('.flexslider').imagesLoaded( function() {
 		$('.flexslider').flexslider({
 			animation: "slide",
-			start: check_header
+			start: check_header,
+			prevText: '<i class="fa fa-chevron-circle-left"></i>',
+			nextText: '<i class="fa fa-chevron-circle-right"></i>',
 		}); // end register flexslider
 	});
 	/*
@@ -161,9 +163,9 @@ jQuery(document).ready(function ($) {
 	}
 	if($('body.home').length===0){
 		check_header();
+		$(window).scroll(check_header);
+		$(window).resize(check_header);
 	}
-	$(window).scroll(check_header);
-	$(window).resize(check_header);
 
 	$('.header-wrapper >.overlay >.row-2 .bars').click(function(){
 		var $menu = $('.header-wrapper >.overlay >.row-2 .menu-primary-container'); 
