@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<?php $image = get_field("header_image");?>
 	<div class="header-wrapper row-1" >
-		<div class="overlay clear-bottom row-1 <?php echo $image? "image-present":"image-absent";?>" <?php if($image):?>style="background-image: url(<?php echo $image['sizes']['large'];?>);"<?php endif;?>>
+		<div class="overlay clear-bottom row-1 <?php echo $image? "image-present":"image-absent";?> no-background" <?php if($image):?>style="background-image: url(<?php echo $image['sizes']['large'];?>);"<?php endif;?>>
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name');?>"></a>

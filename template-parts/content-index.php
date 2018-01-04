@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
 	<?php $slider = get_field("slider");?>
 	<div class="header-wrapper row-1">
-		<div class="overlay clear-bottom row-1 <?php echo $slider? "image-present":"image-absent";?>" <?php if($slider && $slider[0]['image']):?>style="background-image: url(<?php echo $slider[0]['image']['sizes']['large'];?>);"<?php endif;?>>
+		<div class="overlay clear-bottom row-1 <?php echo $slider? "image-present":"image-absent";?> no-background" <?php if($slider && $slider[0]['image']):?>style="background-image: url(<?php echo $slider[0]['image']['sizes']['large'];?>);"<?php endif;?>>
 			<div class="row-1">
 				<h1 class="logo">
 					<a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name');?>"></a>
