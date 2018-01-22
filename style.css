@@ -3725,7 +3725,7 @@ html[xmlns] .flexslider .slides {
   padding: 20px; }
   @media screen and (min-width: 600px) {
     .template-page, .error-404, .template-sitemap {
-      padding: 5% 12% 50% 12%; } }
+      padding: 5% 12% 12% 12%; } }
   .template-page > header h1, .error-404 > header h1, .template-sitemap > header h1 {
     margin: 0 0 20px 0; }
     @media screen and (min-width: 600px) {

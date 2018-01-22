@@ -57,21 +57,7 @@
 					<?php endif;
 					wp_reset_postdata();
 				endif;?>
-			<?php endforeach;
-			$post = get_post(32);
-			setup_postdata( $post );
-			$image = get_field("link_background_image");
-			$text = get_field("subscribe_text");
-			if($image && $text):?>
-				<div class="outer-wrapper js-blocks" style="background-image:url(<?php echo $image['sizes']['large'];?>);">
-					<a href="<?php echo get_the_permalink();?>">
-						<div class="inner-wrapper" >
-							<?php echo $text;?>	
-						</div><!--.inner-wrapper-->
-					</a>
-				</div><!--.outer-wrapper-->
-			<?php endif;
-			wp_reset_postdata();?>
+			<?php endforeach;?>
 		</div><!--.row-2-->
 	<?php endif;?>
 </article><!-- #post-## -->
