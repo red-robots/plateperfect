@@ -86,6 +86,7 @@ jQuery(document).ready(function ($) {
 		if(window.innerWidth>599 ){
 			$page.css("paddingTop",'');
 			if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
+				$overlay.addClass('minimized');
 				$logo_as.css("display","none");
 				$hidden_logo.css({
 					display:"block",
@@ -111,6 +112,7 @@ jQuery(document).ready(function ($) {
 					});
 				}
 			} else {
+				$overlay.removeClass('minimized');
 				$logo_as.css("display","");
 				$hidden_logo.css({
 					display:"",
@@ -130,6 +132,7 @@ jQuery(document).ready(function ($) {
 				});
 				$overlay.addClass("no-background");
 				if($window.scrollTop() + $overlay.outerHeight() + Number($overlay.css("top").replace(/[^0-9]/g,'')) >= $wrapper.offset().top + $wrapper.outerHeight()){
+					$overlay.addClass('minimized');
 					$logo_as.css("display","none");
 					$hidden_logo.css({
 						display:"block",

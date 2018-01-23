@@ -75,12 +75,6 @@
       width: 100%;
       overflow: hidden;
       &.no-background {
-        &:before {
-          background: -webkit-linear-gradient(bottom, black ,black,black,black,transparent ); /* For Safari 5.1 to 6.0 */
-          background: -o-linear-gradient(bottom, black ,black,black,black,transparent); /* For Opera 11.1 to 12.0 */
-          background: -moz-linear-gradient(bottom, black ,black,black,black,transparent); /* For Firefox 3.6 to 15 */
-          background: linear-gradient(to bottom, black ,black,black,black,transparent); /* Standard syntax */	
-        }
         >.background-image {
           background-image: none !important;
         }
@@ -111,6 +105,14 @@
                 }
             }
         }
+        &.minimized {
+          &:before {
+            background: -webkit-linear-gradient(bottom, transparent ,black,transparent ); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(bottom, transparent ,black,transparent); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(bottom, transparent ,black,transparent); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to bottom, transparent ,black,transparent); /* Standard syntax */		
+          }
+        }
         &:before {
           content: "";
           position: absolute;
@@ -120,10 +122,10 @@
           height: 100%;
           z-index: -1;
           opacity: 0.5;
-          background: -webkit-linear-gradient(bottom, transparent ,black,black,black,transparent ); /* For Safari 5.1 to 6.0 */
-          background: -o-linear-gradient(bottom, transparent ,black,black,black,transparent); /* For Opera 11.1 to 12.0 */
-          background: -moz-linear-gradient(bottom, transparent ,black,black,black,transparent); /* For Firefox 3.6 to 15 */
-          background: linear-gradient(to bottom, transparent ,black,black,black,transparent); /* Standard syntax */		
+          background: -webkit-linear-gradient(bottom, black ,black,black,black,transparent ); /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(bottom, black ,black,black,black,transparent); /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(bottom, black ,black,black,black,transparent); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(to bottom, black ,black,black,black,transparent); /* Standard syntax */	
         }
         >.background-image {
           position: absolute;
