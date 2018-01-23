@@ -73,11 +73,17 @@
     width: 100%;
     >.overlay.row-1 {
       width: 100%;
-      background-position: bottom;
-      background-size: cover;
       overflow: hidden;
       &.no-background {
-        background-image: none !important;
+        &:before {
+          background: -webkit-linear-gradient(bottom, black ,black,black,black,transparent ); /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(bottom, black ,black,black,black,transparent); /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(bottom, black ,black,black,black,transparent); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(to bottom, black ,black,black,black,transparent); /* Standard syntax */	
+        }
+        >.background-image {
+          background-image: none !important;
+        }
       }
         &.image-present {
             width: 100%;
@@ -104,6 +110,30 @@
                     }
                 }
             }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          opacity: 0.5;
+          background: -webkit-linear-gradient(bottom, transparent ,black,black,black,transparent ); /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(bottom, transparent ,black,black,black,transparent); /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(bottom, transparent ,black,black,black,transparent); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(to bottom, transparent ,black,black,black,transparent); /* Standard syntax */		
+        }
+        >.background-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          background-position: bottom;
+          background-size: cover;
         }
         >.row-1 {
           float: left;
