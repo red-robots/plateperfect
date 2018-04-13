@@ -32,6 +32,16 @@
 						<?php if($row['image']):?>
 							<li class="slide">
 								<img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>">
+								<?php if($row['testimonial']):?>
+									<div class="testimonial copy">
+										<?php echo $row['testimonial'];
+										if($row['author']):?>
+											<div class="author">
+												<?php echo $row['author'];?>
+											</div><!--.author-->
+										<?php endif;?>
+									</div><!--.testimonial-->
+								<?php endif;?>
 							</li>
 						<?php endif;?>
 					<?php endforeach;?>

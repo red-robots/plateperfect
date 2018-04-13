@@ -3,7 +3,7 @@
         display: block;
         padding: 20px;
         @media screen and (min-width: $tabwidth){
-            padding: 12%;
+            padding: 12% 12% 5% 12%;
         }
         >.outer-wrapper {
             width: 100%;
@@ -51,7 +51,7 @@
 .template-page, .error-404, .template-sitemap, .template-about {
     padding: 20px;
     @media screen and (min-width: $tabwidth){
-        padding: 5% 12% 12% 12%;
+        padding: 5% 12% 5% 12%;
     }
     >header {
         h1 {

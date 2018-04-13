@@ -85,7 +85,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 2;
+            z-index: 4;
         }
         &.image-absent {
             width: 100%;
@@ -233,8 +233,25 @@
         }
         ul.slides {
             li {
+              position: relative;
                 img {
 
+                }
+                .testimonial {
+                  color: white;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  text-align: center;
+                  @include translatexy(-50%,-50%);
+                  width: 80%;
+                  font-size: 18px;
+                  text-shadow: 1px 1px 1px grey;
+                  font-weight: 700;
+                  @media screen and (min-width: $midwidth){
+                    width: 50%;
+                    font-size: 25px;
+                  }
                 }
             }
         }
@@ -243,14 +260,11 @@
 #colophon {
   padding: 20px;
   @media screen and (min-width: $tabwidth){
-    padding: 1% 3% 5% 3%;
+    padding: 1% 3% 3% 3%;
   }
   >.row-1 {
     text-align: center;
     margin: 0 0 20px 0;
-    @media screen and (min-width: $tabwidth){
-      margin: 0 0 50px 0;
-    }
     a {
       display: inline-block;
       margin: 0 20px;
@@ -281,9 +295,6 @@
     }
     .fax {
       margin: 0 0 20px 0;
-      @media screen and (min-width: $tabwidth){
-        margin: 0 0 50px 0;
-      }
     }
     .copyright {
 

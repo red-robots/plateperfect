@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	$('.flexslider').imagesLoaded( function() {
 		$('.flexslider').flexslider({
-			animation: "slide",
+			animation: "fade",
 			start: check_header,
 			prevText: '<i class="fa fa-chevron-circle-left"></i>',
 			nextText: '<i class="fa fa-chevron-circle-right"></i>',
